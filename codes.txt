@@ -1,0 +1,51 @@
+package nithin;
+import java.util.jar.Attributes.Name;
+
+import org.openqa.selenium.By;
+import org.openqa. selenium. firefox. FirefoxDriver;
+public class testcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\Tt1\\Desktop\\webdriver\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		driver.get("https://demo.guru99.com/");
+		driver.findElement(By.name("emailid")).sendKeys("hello1234@gmail.com");
+		driver.findElement(By.name("btnLogin")).click();
+		String exptitle = "Guru99 Bank Home Page";
+		String acttitle = driver.getTitle();
+		if(exptitle.equals(acttitle)) {
+			System.out.println("Test is passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+		}
+}
+
+
+
+
+package nithin;
+import java.util.jar.Attributes.Name;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa. selenium. firefox. FirefoxDriver;
+public class testcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\Tt1\\Desktop\\webdriver\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		driver.get("https://demo.guru99.com/");
+		driver.findElement(By.name("emailid")).sendKeys("asdkdjf");
+		String expmessage = "Email ID is not valid";
+		String actmessage = driver.findElement(By.id("message9")).getText();
+		System.out.println(actmessage);
+		if(expmessage.equals(actmessage)) {
+			System.out.println("Test is passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+		}
+}
