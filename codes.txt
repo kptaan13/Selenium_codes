@@ -90,3 +90,59 @@ public class newcase {
 	        }
 	}
 }
+
+
+
+
+
+
+
+
+
+TO CHECK THE PAYMENT METHOD WITH CORRECT INPUTS
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		Double expAmount;
+		String NewexpAmount;
+		
+		int i =4;
+		int mon = 5;
+		int yer = 2024;
+		driver.get("https://demo.guru99.com/payment-gateway/index.php");
+		WebElement quantityDropdown = driver.findElement(By.name("quantity"));
+		Select quantitySelect = new Select(quantityDropdown);
+		quantitySelect.selectByValue(String.valueOf(i));
+		driver.findElement(By.className("button")).click();
+		driver.findElement(By.id("card_nmuber")).sendKeys("1234546464564564");
+		WebElement monthDropdown = driver.findElement(By.id("month"));
+		Select monthSelect = new Select(monthDropdown);
+		monthSelect.selectByValue(String.valueOf(mon));
+		WebElement yearDropdown = driver.findElement(By.id("year"));
+		Select yearSelect = new Select(yearDropdown);
+		yearSelect.selectByValue(String.valueOf(yer));
+		driver.findElement(By.id("cvv_code")).sendKeys("783");
+		driver.findElement(By.name("submit")).click();
+		String actualOrder = driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]/h3/strong")).getText();
+		String orderId = driver.findElement(By.xpath("//table/tbody/tr[1]/td[2]/h3/strong")).getText();
+		String expOrder = "Order ID";
+		if(expOrder.equals(actualOrder)) {
+			System.out.println("Test is passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+		System.out.println(orderId);
+	
+	}
+}
