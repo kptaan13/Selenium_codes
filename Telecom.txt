@@ -1,0 +1,113 @@
+#1 CHECKING LINKS
+A
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		
+		driver.get("https://demo.guru99.com/telecom/index.html");
+		driver.findElement(By.xpath("//div/div[1]/div[1]/h3/a")).click();
+		String expLink = "https://demo.guru99.com/telecom/addcustomer.php";
+		String actualLink = driver.getCurrentUrl();
+		if(expLink.equals(actualLink)) {
+			System.out.println("Test is Passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+	}
+}
+
+
+B
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		
+		driver.get("https://demo.guru99.com/telecom/index.html");
+		driver.findElement(By.xpath("//div/div[1]/div[2]/h3/a")).click();
+		String expLink = "https://demo.guru99.com/telecom/assigntariffplantocustomer.php";
+		String actualLink = driver.getCurrentUrl();
+		if(expLink.equals(actualLink)) {
+			System.out.println("Test is Passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+	}
+}
+
+C
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		
+		driver.get("https://demo.guru99.com/telecom/index.html");
+		driver.findElement(By.xpath("//div/div[3]/div[1]/h3/a")).click();
+		String expLink = "https://demo.guru99.com/telecom/addtariffplans.php";
+		String actualLink = driver.getCurrentUrl();
+		if(expLink.equals(actualLink)) {
+			System.out.println("Test is Passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+	}
+}
+
+D
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		
+		driver.get("https://demo.guru99.com/telecom/index.html");
+		driver.findElement(By.xpath("//div/div[3]/div[2]/h3/a")).click();
+		String expLink = "https://demo.guru99.com/telecom/billing.php";
+		String actualLink = driver.getCurrentUrl();
+		if(expLink.equals(actualLink)) {
+			System.out.println("Test is Passed");
+		}
+		else {
+			System.out.println("Test is failed");
+		}
+	}
+}
