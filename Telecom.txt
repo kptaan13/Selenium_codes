@@ -111,3 +111,40 @@ public class newcase {
 		}
 	}
 }
+
+
+
+#2 WITH CORRECT INPUTS
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		
+		driver.get("https://demo.guru99.com/telecom/index.html");
+		driver.findElement(By.xpath("//div/div[1]/div[1]/h3/a")).click();
+	    //driver.findElement(By.id("done")).click();
+		driver.findElement(By.id("fname")).sendKeys("Rohan");
+		driver.findElement(By.id("lname")).sendKeys("Kakkar");
+		driver.findElement(By.id("email")).sendKeys("dasdjnlkno@gmail.com");
+		driver.findElement(By.name("addr")).sendKeys("1069 rue duguay");
+		driver.findElement(By.id("telephoneno")).sendKeys("1234567890");
+		driver.findElement(By.name("submit")).click();
+		String customer = driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]/b")).getText();
+		String expcustomer = "Customer ID";
+		if(customer.equals(expcustomer)) {
+			System.out.println("Passed");
+		}
+		else {
+			System.out.println("Failed");
+		}
+	}
+} 
