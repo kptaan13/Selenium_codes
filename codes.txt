@@ -24,7 +24,7 @@ public class testcase {
 
 
 
-
+TO CHECK DOES IT SHOWS THE ERROR MESSAGE.
 package nithin;
 import java.util.jar.Attributes.Name;
 
@@ -48,4 +48,45 @@ public class testcase {
 			System.out.println("Test is failed");
 		}
 		}
+}
+
+
+
+
+TO CHECK THE AMOUNT IN THE BEGINNING OF NEW PAGE.
+package newtest;
+import java.text.DecimalFormat;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa. selenium. firefox.FirefoxDriver;
+
+public class newcase {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.firefox.marionette", "C:\\Users\\hp\\Downloads\\geckodriver-v0.32.2-win-aarch64\\geckodriver.exe");
+		FirefoxDriver driver=new FirefoxDriver();
+		DecimalFormat d = new DecimalFormat("0.00");
+		Double expAmount;
+		String NewexpAmount;
+		
+		int i =4;
+		driver.get("https://demo.guru99.com/payment-gateway/index.php");
+		WebElement quantityDropdown = driver.findElement(By.name("quantity"));
+		Select quantitySelect = new Select(quantityDropdown);
+		quantitySelect.selectByValue(String.valueOf(i));
+		driver.findElement(By.className("button")).click();
+		 WebElement payAmountElement = driver.findElement(By.className("6u"));
+		 expAmount = (double) (i*20);
+		 NewexpAmount = d.format(expAmount);
+	        String payAmountText = payAmountElement.getText().substring(13);
+	        /*System.out.println(NewexpAmount);
+	        System.out.println(payAmountText);*/
+	        if(NewexpAmount.equals(payAmountText)) {
+	        	System.out.println("Test is passed");
+	        }
+	        else {
+	        	System.out.println("Test is failed");
+	        }
+	}
 }
